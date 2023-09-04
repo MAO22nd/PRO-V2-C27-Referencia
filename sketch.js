@@ -20,11 +20,19 @@ var waterSplashSpritedata, waterSplashSpritesheet;
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
   towerImage = loadImage("./assets/tower.png");
+// aqui ta o codico que é para ajuda o arquivo json que contem as caracteristicas  da navegação do barco
   boatSpritedata = loadJSON("assets/boat/boat.json");
+  // codico que carrega a imagem que sera transformada em ação.
   boatSpritesheet = loadImage("assets/boat/boat.png");
+  // aqui ta o codico que é para ajuda o arquivo json que contem as caracteristicas  da destruicao do barco
   brokenBoatSpritedata = loadJSON("assets/boat/brokenBoat.json");
+    // codico que carrega a imagem que sera transformada em ação.
   brokenBoatSpritesheet = loadImage("assets/boat/brokenBoat.png");
+    // aqui ta o codico que é para ajuda o arquivo json que contem as caracteristicas  da bola quicante em relação a aguá
+
+
   waterSplashSpritedata = loadJSON("assets/waterSplash/waterSplash.json");
+    // codico que carrega a imagem que sera transformada em ação.
   waterSplashSpritesheet = loadImage("assets/waterSplash/waterSplash.png");
 }
 
@@ -43,8 +51,9 @@ function setup() {
   World.add(world, tower);
 
   cannon = new Cannon(180, 110, 130, 100, angle);
-
+// a variavel para criar  os frames do barco
   var boatFrames = boatSpritedata.frames;
+  //for vai colocar  na nossa matriz as animações do barco e as posicoes
   for (var i = 0; i < boatFrames.length; i++) {
     var pos = boatFrames[i].position;
     var img = boatSpritesheet.get(pos.x, pos.y, pos.w, pos.h);
